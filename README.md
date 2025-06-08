@@ -26,6 +26,35 @@ Ideal for prototyping, agent experimentation, and showcase of AI agent capabilit
 - Update agent class in `app\Filament\Pages\<agent_name>.php` `protected ?string $agent = <agent_name>::class;`
 - Update filament navigation settings in `app\Filament\Pages\<agent_name>.php`
 
+Example Agent Page:
+```php
+<?php
+
+namespace App\Filament\Pages;
+
+use App\Filament\Pages\AiAgentPage;
+use App\AiAgents\YourAssistant;
+
+class YourAssistantAgent extends AiAgentPage
+{
+   // Plug your agent here
+   protected ?string $agent = YourAssistant::class;
+
+   // Filament Settings
+   public static ?string $slug = 'your-assistant';
+   public static ?string $title = 'Your Assistant';
+   protected static ?string $navigationIcon = 'heroicon-o-chat-bubble-left-right';
+   protected static ?string $navigationLabel = 'Your Assistant';
+
+   
+   // Register in navigation
+   public static function shouldRegisterNavigation(array $parameters = []): bool
+   {
+      return true;
+   }
+}
+```
+
 ## Setup
 Below is the setup process for the application.
 

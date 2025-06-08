@@ -2,14 +2,7 @@
 
 namespace App\Filament\Pages;
 
-use Filament\Pages\Page;
-use Filament\Actions\Action;
-use Filament\Forms\Components\Section;
-use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\ViewField;
-use Filament\Forms\Form;
-use Filament\Notifications\Notification;
-use LarAgent\Agent;
+use App\Filament\Pages\AiAgentPage;
 use App\AiAgents\UserManager;
 
 class UserManagerAgent extends AiAgentPage
