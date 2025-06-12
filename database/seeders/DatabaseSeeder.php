@@ -21,6 +21,11 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
 
+        // Seed employees
+        $this->call([
+            EmployeeSeeder::class,
+        ]);
+
         // Create 200 additional users
         User::factory(200)->create();
     }
