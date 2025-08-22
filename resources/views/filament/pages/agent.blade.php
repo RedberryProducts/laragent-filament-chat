@@ -28,7 +28,7 @@
                                                 </span>
                                             @endif
                                         </div>
-                                        <p class="mt-1">{{ $message['content'] }}</p>
+                                        <p class="mt-1">{{ $message['content'][0]['text'] ?? $message['content'] }}</p>
                                     </div>
                                 </div>
                             @endforeach
@@ -45,7 +45,7 @@
                                         <strong class="font-mono uppercase text-gray-500">{{ $message['role'] }}:</strong>
                                         <p class="mt-1 font-sans">
                                             @if(isset($message['content']))
-                                                {{ $message['content'] }}
+                                                {{ $message['content'][0]['text'] ?? $message['content'] }}
                                             @else
                                                 {{ json_encode($message, JSON_PRETTY_PRINT) }}
                                             @endif
